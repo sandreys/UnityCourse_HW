@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _body;
     [SerializeField] private float _speed;
+    private Rigidbody _body;
     void Start()
     {
         _body = this.GetComponent<Rigidbody>();
