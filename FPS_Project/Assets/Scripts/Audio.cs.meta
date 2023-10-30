@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 4adcf48e337e38f4ebedec2e33dfac0b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fireAudioClip: {fileID: 8300000, guid: 8602b7d5cd15c1943a50aa53f171c8cf, type: 3}
+  - reloadAudioClip: {fileID: 8300000, guid: 3c5c1d4d7b9307c458890a4beb12e4ae, type: 3}
+  - walkingAudioClip: {fileID: 8300000, guid: 65d9836027675574b8d070c5718f99c7, type: 3}
+  - landAudioClip: {fileID: 8300000, guid: 756c4e23e8553954fa91b4cc2936afa0, type: 3}
+  - fireAudioSource: {instanceID: 0}
+  - reloadAudioSource: {instanceID: 0}
+  - walkAudioSource: {instanceID: 0}
+  - landAudioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
