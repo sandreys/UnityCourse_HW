@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class ButtonFunction : MonoBehaviour
 {
 
-    public string[] Maps = new string[] { "Dust" };
+    public string[] Maps = new string[] {"Dust"};
     public GameObject GameSettings;
     public TextMeshProUGUI MapText;
     public TextMeshProUGUI BotsText;
