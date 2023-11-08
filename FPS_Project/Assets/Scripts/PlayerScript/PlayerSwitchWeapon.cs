@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class PlayerSwitchWeapon : MonoBehaviour
 {
-    public int weaponIndicator = 0;
-    public GameObject[] weapons = new GameObject[2];
-    private UIManager UIManager;
+    public int WeaponIndicator = 0;
+    public GameObject[] Weapons = new GameObject[2];
+    private UIManager _uiManager;
 
     public void Start()
     {
-        UIManager = FindAnyObjectByType<UIManager>();
+        _uiManager = FindAnyObjectByType<UIManager>();
 
         SwitchWeapon(0);
     }
     public void SwitchWeapon(int index)
     { 
-        for (int i = 0; i < weapons.Length; i++)
+        for (int i = 0; i < Weapons.Length; i++)
         {
-            weapons[i].SetActive(false);
+            Weapons[i].SetActive(false);
         }
-        UIManager.SetWeaponToDisplay(index);
+        _uiManager.SetWeaponToDisplay(index);
 
-        weapons[index].SetActive(true);
-        weaponIndicator = index;
+        Weapons[index].SetActive(true);
+        WeaponIndicator = index;
 
     }
 }

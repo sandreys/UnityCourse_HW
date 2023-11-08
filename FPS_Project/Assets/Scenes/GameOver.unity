@@ -835,8 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8796017ff266794299d8fc5c6b75b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redTeam: {fileID: 1151895093}
-  blueTeam: {fileID: 2006817458}
+  RedTeam: {fileID: 1151895093}
+  BlueTeam: {fileID: 2006817458}
 --- !u!1 &1151895092
 GameObject:
   m_ObjectHideFlags: 0

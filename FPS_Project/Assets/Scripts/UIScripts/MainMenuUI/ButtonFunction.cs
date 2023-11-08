@@ -12,23 +12,23 @@ public class ButtonFunction : MonoBehaviour
 {
 
     public string[] Maps = new string[] { "Dust" };
-    public GameObject gameSettings;
-    public TextMeshProUGUI mapText;
-    public TextMeshProUGUI botsText;
+    public GameObject GameSettings;
+    public TextMeshProUGUI MapText;
+    public TextMeshProUGUI BotsText;
 
     private int _currentIndex = 0;
     private int _botCounter = 1;
     private int _maxBotCounter = 5;
     public void Awake()
     {
-        mapText.text = Maps[0];
-        botsText.text = _botCounter.ToString();
+        MapText.text = Maps[0];
+        BotsText.text = _botCounter.ToString();
         PlayerPrefs.SetInt("Bots", _botCounter);
     }
 
     public void OpenGameSettings()
     {
-        gameSettings.transform.localScale = Vector3.one;
+        GameSettings.transform.localScale = Vector3.one;
     }
 
     public void NextMap()
@@ -36,13 +36,13 @@ public class ButtonFunction : MonoBehaviour
         if (_currentIndex < Maps.Length - 1)
         {
             _currentIndex++;
-            mapText.text = Maps[_currentIndex];
+            MapText.text = Maps[_currentIndex];
 
         }
         else
         {
             _currentIndex = 0;
-            mapText.text = Maps[_currentIndex];
+            MapText.text = Maps[_currentIndex];
         }
 
 
@@ -58,7 +58,7 @@ public class ButtonFunction : MonoBehaviour
         {
             _botCounter = 1;
         }
-        botsText.text = _botCounter.ToString();
+        BotsText.text = _botCounter.ToString();
         PlayerPrefs.SetInt("Bots", _botCounter);
     }
 
@@ -72,7 +72,7 @@ public class ButtonFunction : MonoBehaviour
         {
             _botCounter = _maxBotCounter;
         }
-        botsText.text = _botCounter.ToString();
+        BotsText.text = _botCounter.ToString();
         PlayerPrefs.SetInt("Bots", _botCounter);
     }
 

@@ -7,14 +7,14 @@ public class AiAttackPlayerState : AiState
    
     public void Enter(AIAgent agent)
     {
-        agent.weapon.SetTarget(agent.playerTransform);
-        agent.navMeshAgent.stoppingDistance = 10f;
+        agent.Weapon.SetTarget(agent.PlayerTransform);
+        agent.NavMeshAgent.stoppingDistance = 10f;
     }
 
     public void Exit(AIAgent agent)
     {
       
-        agent.navMeshAgent.stoppingDistance = 0f;
+        agent.NavMeshAgent.stoppingDistance = 0f;
         
     }
 
@@ -26,10 +26,10 @@ public class AiAttackPlayerState : AiState
     public void Update(AIAgent agent)
     {
        
-        agent.navMeshAgent.destination = agent.playerTransform.position;
+        agent.NavMeshAgent.destination = agent.PlayerTransform.position;
 
         RaycastHit hit;
-        Vector3 directionToPlayer = agent.playerTransform.position - agent.transform.position;
+        Vector3 directionToPlayer = agent.PlayerTransform.position - agent.transform.position;
 
         if (Physics.Raycast(agent.transform.position, directionToPlayer, out hit))
         {
@@ -39,7 +39,7 @@ public class AiAttackPlayerState : AiState
                 float angleToPlayer = Vector3.Angle(agent.transform.forward, directionToPlayer);
                 if (angleToPlayer < angle)
                 {
-                    agent.weapon.Shoot();
+                    agent.Weapon.Shoot();
                 }
                 else
                 {

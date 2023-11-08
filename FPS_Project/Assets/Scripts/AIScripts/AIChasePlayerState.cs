@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AIChasePlayerState : AiState
 {
-    public Transform playerTransform;
+    public Transform PlayerTransform;
     
 
     
@@ -13,9 +13,9 @@ public class AIChasePlayerState : AiState
 
     public void Enter(AIAgent agent)
     {
-        if (playerTransform == null)
+        if (PlayerTransform == null)
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
         
        
@@ -41,20 +41,20 @@ public class AIChasePlayerState : AiState
         }
 
         timer -= Time.deltaTime;
-        if (!agent.navMeshAgent.hasPath)
+        if (!agent.NavMeshAgent.hasPath)
         {
-            agent.navMeshAgent.destination = agent.playerTransform.position;
+            agent.NavMeshAgent.destination = agent.PlayerTransform.position;
         }
         if (timer < 0)
         {
            
-            Vector3 direction = (agent.playerTransform.position - agent.navMeshAgent.destination);
+            Vector3 direction = (agent.PlayerTransform.position - agent.NavMeshAgent.destination);
             direction.y = 0;
-            if (direction.sqrMagnitude > agent.config.maxDistance * agent.config.maxDistance)
+            if (direction.sqrMagnitude > agent.Config.MaxDistance * agent.Config.MaxDistance)
             {
-                if (agent.navMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
+                if (agent.NavMeshAgent.pathStatus != NavMeshPathStatus.PathPartial)
                 {
-                    agent.navMeshAgent.destination = agent.playerTransform.position;
+                    agent.NavMeshAgent.destination = agent.PlayerTransform.position;
                 }
             }
             else
@@ -62,7 +62,7 @@ public class AIChasePlayerState : AiState
                 agent.StateMachine.ChangeState(AIStateID.AttackPlayer);
                 Debug.Log(agent.StateMachine.CurrentState);
             }   
-            timer = agent.config.maxTime;
+            timer = agent.Config.MaxTime;
         }
 
 

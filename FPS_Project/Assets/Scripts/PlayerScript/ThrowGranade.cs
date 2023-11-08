@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 
 public class ThrowGranade : MonoBehaviour
 {
-    [SerializeField] private Transform camera;
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private GameObject throwGranade;
+    [SerializeField] private Transform _camera;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private GameObject _throwGranade;
 
-    [SerializeField] private int totalGranades;
-    [SerializeField] private float throwCooldown;
-    [SerializeField] private float throwForce;
-    [SerializeField] private float throwUpForce;
+    [SerializeField] private int _totalGranades;
+    [SerializeField] private float _throwCooldown;
+    [SerializeField] private float _throwForce;
+    [SerializeField] private float _throwUpForce;
 
     private bool _isReadtToTrow;
 
@@ -28,18 +28,18 @@ public class ThrowGranade : MonoBehaviour
     }
     public void Throw()
     {
-        if (_isReadtToTrow && totalGranades > 0)
+        if (_isReadtToTrow && _totalGranades > 0)
         {
 
-            GameObject granade = Instantiate(throwGranade, attackPoint.position, camera.rotation);
+            GameObject granade = Instantiate(_throwGranade, _attackPoint.position, _camera.rotation);
             Rigidbody granadeRigidBody = granade.GetComponent<Rigidbody>();
 
-            Vector3 addForce = camera.transform.forward * throwForce + transform.up * throwUpForce;
+            Vector3 addForce = _camera.transform.forward * _throwForce + transform.up * _throwUpForce;
             granadeRigidBody.AddForce(addForce, ForceMode.Impulse);
 
-            totalGranades--;
+            _totalGranades--;
 
-            Invoke(nameof(ThrowReset), throwCooldown);
+            Invoke(nameof(ThrowReset), _throwCooldown);
 
         }
     }

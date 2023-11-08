@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public float _health;
     [SerializeField] private float _lerpTimer;
     [SerializeField] private float _maxHealth = 100f;
-    [SerializeField] private float chipSpeed = 2f;
+    [SerializeField] private float _chipSpeed = 2f;
 
     public SkinnedMeshRenderer[] playerSkin;
     public Image frontHealthBar;
@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
             backHealthBar.color = Color.red;
             _lerpTimer += Time.deltaTime;
 
-            float percentComplete = _lerpTimer / chipSpeed;
+            float percentComplete = _lerpTimer / _chipSpeed;
 
             backHealthBar.fillAmount = Mathf.Lerp(fillBackBar, healthFraction, percentComplete);
 
@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
             backHealthBar.color = Color.green;
             backHealthBar.fillAmount = healthFraction;
             _lerpTimer += Time.deltaTime;
-            float percentComplete = _lerpTimer / chipSpeed;
+            float percentComplete = _lerpTimer / _chipSpeed;
             percentComplete *= percentComplete;
             frontHealthBar.fillAmount = Mathf.Lerp(fillFrontBar, backHealthBar.fillAmount, percentComplete);
         }

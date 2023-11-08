@@ -712,9 +712,9 @@ MonoBehaviour:
   Maps:
   - Dust
   - mirage
-  gameSettings: {fileID: 1199467629}
-  mapText: {fileID: 1886522475}
-  botsText: {fileID: 1277447795}
+  GameSettings: {fileID: 1199467629}
+  MapText: {fileID: 1886522475}
+  BotsText: {fileID: 1277447795}
 --- !u!1 &896026052
 GameObject:
   m_ObjectHideFlags: 0

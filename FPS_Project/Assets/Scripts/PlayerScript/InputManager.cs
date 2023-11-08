@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour
         _playerActions.Movement.performed += context => CheckMovementState();
         _playerActions.Movement.canceled += context => CheckMovementState();
         _playerActions.Jump.performed += context => _motor.Jump();
-        _playerActions.SwitchWeapon.performed += context => _switchWeapon.SwitchWeapon((_switchWeapon.weaponIndicator < 1) ? ++_switchWeapon.weaponIndicator : 0);
+        _playerActions.SwitchWeapon.performed += context => _switchWeapon.SwitchWeapon((_switchWeapon.WeaponIndicator < 1) ? ++_switchWeapon.WeaponIndicator : 0);
         _playerActions.ThrowGranade.performed += context => _throwGranade.Throw();
     }
 

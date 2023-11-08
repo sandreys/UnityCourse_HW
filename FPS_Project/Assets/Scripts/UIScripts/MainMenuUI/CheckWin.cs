@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class CheckWin : MonoBehaviour
 {
-    public Transform redTeam;
-    public Transform blueTeam;
+    public Transform RedTeam;
+    public Transform BlueTeam;
     public void Awake()
     {
         if (PlayerPrefs.GetInt("RedScore") >= 1000)
         {
-            redTeam.transform.localScale = Vector3.one;
+            RedTeam.transform.localScale = Vector3.one;
         }
         else
         {
-            blueTeam.transform.localScale = Vector3.one;
+            BlueTeam.transform.localScale = Vector3.one;
         }
     }
 }

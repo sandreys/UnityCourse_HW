@@ -2285,13 +2285,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfce6f6fc0586b4e9e24c62957108c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialState: 0
-  navMeshAgent: {fileID: 0}
+  InitialState: 0
+  NavMeshAgent: {fileID: 0}
   Ragdoll: {fileID: 0}
   Animator: {fileID: 0}
-  config: {fileID: 11400000, guid: c132239a9b789c449849e01e720819c1, type: 2}
-  playerTransform: {fileID: 0}
-  weapon: {fileID: 4676013455301635803}
+  Config: {fileID: 11400000, guid: c132239a9b789c449849e01e720819c1, type: 2}
+  PlayerTransform: {fileID: 0}
+  Weapon: {fileID: 4676013455301635803}
 --- !u!1 &2917685572466296926
 GameObject:
   m_ObjectHideFlags: 0
@@ -8799,17 +8799,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd8e6597fa24904ab965276dbd9bc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  _damageAmount: 5
   _shootDelay: 0.5
-  targetTransform: {fileID: 0}
-  aimTransform: {fileID: 2917685571329210044}
-  bone: {fileID: 2917685572711928344}
+  TargetTransform: {fileID: 0}
+  AimTransform: {fileID: 2917685571329210044}
+  Bone: {fileID: 2917685572711928344}
   FireFlash: {fileID: 2917685573115179357}
   BulletEffect: {fileID: 5411062687739640293, guid: d7b93fd175a1e804da8e9a6af8524955, type: 3}
   Iterations: 10
-  angleLimit: 90
-  distanceLimit: 1.5
-  weight: 1
+  AngleLimit: 90
+  DistanceLimit: 1.5
+  Weight: 1
 --- !u!1 &4676013455301635806
 GameObject:
   m_ObjectHideFlags: 0

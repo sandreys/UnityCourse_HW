@@ -9,8 +9,8 @@ public class AIDeathState : AiState
     {
         agent.Ragdoll.ActivateRagdoll();
         agent.Animator.enabled = false;
-        agent.navMeshAgent.enabled = false;
-        agent.weapon.enabled = false;
+        agent.NavMeshAgent.enabled = false;
+        agent.Weapon.enabled = false;
         agent.StartCoroutine(Spawner.instance.SpawnEnemyWithDelay(_spawnDelay));
         Object.Destroy(agent.gameObject, _spawnDelay + 0.1f);
 

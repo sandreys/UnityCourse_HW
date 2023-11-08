@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
 
     
 
-    public float _spawnTime = 3f;
+    
 
     public void Start()
     {

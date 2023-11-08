@@ -6,26 +6,26 @@ using UnityEngine.AI;
 public class AIAgent : MonoBehaviour
 {
     public AIStateMachine StateMachine;
-    public AIStateID initialState;
-    public NavMeshAgent navMeshAgent;
+    public AIStateID InitialState;
+    public NavMeshAgent NavMeshAgent;
     public Ragdoll Ragdoll;
     public Animator Animator;
-    public AIAgentConfig config;
-    public Transform playerTransform;
-    public WeaponIk weapon;
+    public AIAgentConfig Config;
+    public Transform PlayerTransform;
+    public WeaponIk Weapon;
     
     public void Start()
     {      
         Ragdoll = GetComponent<Ragdoll>();
         Animator = GetComponent<Animator>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
         StateMachine = new AIStateMachine(this);
         StateMachine.RegisterState(new AIChasePlayerState());
         StateMachine.RegisterState(new AIDeathState());
         StateMachine.RegisterState(new AIIdleState());
         StateMachine.RegisterState(new AiAttackPlayerState());
-        StateMachine.ChangeState(initialState);
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        StateMachine.ChangeState(InitialState);
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void Update()

@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject primaryWeapon;
-    public GameObject secondaryWeapon;
+    public GameObject PrimaryWeapon;
+    public GameObject SecondaryWeapon;
 
     public void SetWeaponToDisplay(int index)
     {
         if (index == 0)
         {
-            primaryWeapon.SetActive(false);
-            secondaryWeapon.SetActive(true);
+            PrimaryWeapon.SetActive(false);
+            SecondaryWeapon.SetActive(true);
         }
         else
         {
-            primaryWeapon.SetActive(true);
-            secondaryWeapon.SetActive(false);
+            PrimaryWeapon.SetActive(true);
+            SecondaryWeapon.SetActive(false);
         }
     }
 
